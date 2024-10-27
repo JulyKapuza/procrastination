@@ -1,0 +1,122 @@
+@use "src/styles/variables" as *;
+
+.wrap-plan{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $color-white-01;
+  border:1px solid $color-grey-10;
+  border-radius: $size-2;
+  color:$color-grey-07;
+  padding: 20px 12px;
+  position: relative;
+  margin-bottom: $size-2;
+
+  &__active{
+    background-color: $color-white-04;
+    border: 1px solid $color-olive-01;
+
+    &-default{
+      padding-top: 57px;
+    }
+  }
+
+  &__active-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    background-color: $color-olive-01;
+    padding: $size-2 0;
+    text-align: center;
+    color: $color-white-01;
+    font-size: $size-4;
+    font-weight: 500;
+    line-height: 21px;
+
+  }
+
+}
+
+.inner-wrap{
+  display: flex;
+  justify-content: space-between;
+}
+.period{
+  display: flex;
+  gap: $size-2;
+
+    &-title{
+    color: $color-grey-07;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &-price{
+    margin-right: $size-2;
+    font-size: $size-3;
+    line-height: 18px;
+    color:$color-grey-06;
+
+    &__through{
+      text-decoration: line-through;
+    }
+  }
+}
+
+.day{
+  display: flex;
+  gap: 4px;
+
+  &-price{
+    color:$color-grey-04;
+    font-size: $size-4;
+    line-height: 24px;
+    text-decoration: line-through;
+    text-decoration-color: $color-red-01;
+  }
+
+  &-inner_wrap{
+    display: flex;
+    color:$color-grey-07;
+  }
+
+  &-currency{
+    font-size: $size-4;
+    font-weight: 500;
+    line-height: 24px;
+
+  }
+  &-current_price{
+    font-size: 48px;
+    line-height: 46px;
+  }
+}
+
+.sale{
+  display: flex;
+  flex-direction: column;
+  width: 47px;
+  font-weight: 500;
+
+  &-price{
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &-per_day{
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.wrap-plan:last-child{
+ margin-bottom: 0 !important;
+}
+
+
+
+

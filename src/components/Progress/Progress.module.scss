@@ -1,0 +1,68 @@
+@use "src/styles/variables" as *;
+
+.root-wrapper {
+  padding: $size-2 0;
+}
+
+.bar-wrapper {
+  position: relative;
+
+  height: 4px;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  background-color: $color-pale-01;
+  border-radius: 7px;
+}
+
+.progress-bar {
+  position: absolute;
+  left: 0;
+
+  transition: width 0.3s ease-in-out;
+
+  height: 100%;
+
+  background-color: $color-olive-01;
+  border-radius: 7px;
+}
+
+/* --Point-- */
+
+.point-wrapper {
+  position: relative;
+}
+
+.point {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1px;
+
+  border-radius: 100%;
+  border: 1px solid transparent;
+
+  transition: all 0.3s ease-in-out;
+  background-color: $color-pale-01;
+}
+
+.prev {
+  background-color: $color-olive-01;
+}
+
+.current {
+  border: 1px solid $color-olive-01;
+}
+
+.check {
+  width: $size-2;
+  height: $size-2;
+}

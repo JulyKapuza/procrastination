@@ -1,0 +1,15 @@
+@use "src/styles/variables" as *;
+
+.lock{
+  display: flex;
+  gap: $size-2;
+  margin-top: $size-2;
+
+  font-size: $size-3;
+  line-height: 18px;
+  color: $color-grey-08;
+
+  &-icon{
+    color: $color-olive-01;
+  }
+}

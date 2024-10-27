@@ -1,0 +1,17 @@
+@use "variables" as *;
+
+.hide{
+  visibility: hidden;
+}
+
+.title{
+  font-size: $size-5;
+  font-weight: 600;
+  line-height: 29px;
+  color: $color-grey-07;
+  margin-bottom: $size-4;
+}
+
+.margin-bottom-medium {
+  margin-bottom: $size_4;
+}

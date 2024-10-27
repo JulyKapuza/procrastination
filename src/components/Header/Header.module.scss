@@ -1,0 +1,24 @@
+@use "src/styles/variables" as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    padding: 6px 0;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin: 0 auto;
+
+    font-size: 16px;
+    font-weight: $extra-bold-font-weight;
+    font-style: italic;
+
+    color: $color-olive-01;
+}

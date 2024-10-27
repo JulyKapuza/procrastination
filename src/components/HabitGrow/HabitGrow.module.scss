@@ -1,0 +1,63 @@
+@use "src/styles/variables" as *;
+
+.description{
+  font-size: $size-4;
+  line-height: 24px;
+  color: $color-grey-07;
+  margin-bottom: $size-4;
+}
+
+.habit-list{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: flex-end;
+  justify-items: center;
+
+  border: 1px solid $color-grey-10;
+  border-radius: 12px;
+  background-color: $color-white-01;
+  padding: 12px 9px;
+
+
+  &_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: $size-3;
+
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid $color-grey-11;
+  }
+  &_title{
+    font-size: $size-3;
+    font-weight: 500;
+    line-height: 17px;
+    color: $color-black-01;
+
+    text-align: center;
+
+  }
+  &_period{
+    font-size: $size-4;
+    font-weight: 600;
+    line-height: $size-5;
+    color: $color-grey-07;
+
+  }
+}
+.habit-list_item:last-child{
+  border: 0 !important;
+}
+.habit-list_item:first-child{
+  padding: 0 12px !important;
+}
+
+@media screen and (min-width: 640px) {
+  .habit-list{
+    height: 300px;
+    width: 700px;
+    margin: 0 auto;
+  }
+}

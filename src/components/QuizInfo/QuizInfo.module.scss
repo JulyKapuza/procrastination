@@ -1,0 +1,25 @@
+@use "src/styles/variables" as *;
+@use "src/styles/mixin" as *;
+
+.title-quiz{
+  font-size: 24px;
+  font-weight: 600;
+  color: $color-grey-07;
+  line-height: 34px;
+}
+
+.estimate{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: $size-4;
+  padding: $size-2 0;
+
+  &-text{
+    font-size: $size-4 ;
+    line-height: 24px ;
+    font-weight: 500;
+  }
+}
+

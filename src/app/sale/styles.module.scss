@@ -1,0 +1,75 @@
+@mixin desktopSize{
+  width: 700px;
+  margin: 0 auto 20px auto;
+}
+
+.title-plans{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+
+  color:#333333;
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+.discount{
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color:#333333;
+
+  background-color: #F2F2C5;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 20px;
+
+}
+.list-plans{
+  margin-bottom: 20px;
+}
+.money-back{
+display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 8px;
+
+  color:#606060;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.note{
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 10px;
+  line-height: 15px;
+  color: #606060;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 8px;
+
+  &-email{
+    text-decoration: underline;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 960px){
+  .list-plans{
+  @include desktopSize
+
+  }
+
+}
+
+@media screen and (min-width: 960px){
+  .discount{
+    @include desktopSize
+  }
+
+}
