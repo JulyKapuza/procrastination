@@ -13,9 +13,6 @@
     "*.{js,ts}": [
       "eslint --fix",
       "prettier --write"
-    ],
-    "*.scss": [
-      "stylelint --fix"
     ]
   },
   "dependencies": {

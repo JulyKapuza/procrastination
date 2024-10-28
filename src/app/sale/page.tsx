@@ -27,7 +27,7 @@ export default function Sale() {
     }
 
     return (
-        <main className="h-full px-4 bg-[#FEFEEE]">
+        <main className="h-screen px-4 py-3 bg-[#FEFEEE]">
             <div className="h-full grid grid-rows-[1fr]">
                 <div className="flex flex-col h-full max-w-[1300px] sm:mx-auto">
                     <Header onClickBack={onClickBack} />

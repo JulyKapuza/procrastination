@@ -12,6 +12,16 @@
   margin-bottom: $size-4;
 }
 
+.margin-top-auto {
+  margin-top: auto;
+}
+
 .margin-bottom-medium {
   margin-bottom: $size_4;
+}
+
+.absolute-center{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }

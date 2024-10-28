@@ -1,7 +1,7 @@
 import { FC, KeyboardEvent, useEffect, useState } from 'react'
 import cn from 'classnames'
 import styles from './CheckBox.module.scss'
-import CheckedIcon from '../../../../public/icons/icon.svg'
+import CheckedIcon from '/public/icons/checkbox.svg'
 
 interface CheckBoxProps {
     type?: 'circle' | 'square'

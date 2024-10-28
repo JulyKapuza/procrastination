@@ -1,18 +1,27 @@
-.circle{
-    border:1px solid #6D6D6D;
-    border-radius: 100%;
+@use "src/styles/variables" as *;
+@use "src/styles/mixin" as *;
+
+@mixin defaultCheck{
+    border:1px solid $color-grey-13;
+    position: relative;
+
     width: 18px;
     height: 18px;
-    position: relative;
+}
+
+.circle{
+    @include defaultCheck;
+    border-radius: 100%;
+
 }
 
 .circle::after {
     content: "";
     display: block;
     border-radius: 100%;
-    width: 12px;
-    height: 12px;
-    background-color: #000000;
+    width: $size-3;
+    height: $size-3;
+    background-color: $color-black-01;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,23 +34,16 @@
 }
 
 .square{
-    border:1px solid #6D6D6D;
+    @include defaultCheck;
+    @include flexCenter;
     border-radius: 5px;
-    width: 18px;
-    height: 18px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
 }
 .square.squareActive {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     width: 18px;
     height: 18px;
     border-radius: 5px;
-    background-color: #0A0A0A;
-    border: 1px solid #0A0A0A;
+    background-color: $color-black-05;
+    border: 1px solid $color-black-05;
 }

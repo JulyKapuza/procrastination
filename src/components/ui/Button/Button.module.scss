@@ -2,9 +2,9 @@
 @use "src/styles/mixin" as *;
 
 @mixin default {
-    padding: 12px 12px;
+    padding: $size-3;
     border-radius: 24px;
-    box-shadow: 0px 1px 3.2px 0px #40588805;
+    box-shadow: 0 1px 3.2px 0 rgba(99, 99, 99, 0.1);
     width: 100%;
 }
 @mixin reset {
@@ -15,12 +15,12 @@
 
 .button{
     @include default;
-    background-color: #3A3B40;
-    color: #FBFBFB;
+    background-color: $color-black-04;
+    color: $color-white-03;
     cursor: pointer;
     transition: ease background-color 250ms;
     &:hover {
-        background-color: #585858;
+        background-color: $color-grey-05;
     }
 
 }
@@ -28,8 +28,8 @@
 .button-disabled {
     @include default;
     cursor: default;
-    background-color: #EFEFEF;
-    color:#858585;
+    background-color: $color-grey-01;
+    color:$color-grey-03;
 }
 .as-icon {
     @include reset;

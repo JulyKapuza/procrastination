@@ -11,6 +11,7 @@
   padding: 20px 12px;
   position: relative;
   margin-bottom: $size-2;
+  cursor: pointer;
 
   &__active{
     background-color: $color-white-04;

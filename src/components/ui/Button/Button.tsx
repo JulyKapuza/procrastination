@@ -1,4 +1,9 @@
-import { FC, PropsWithChildren, ButtonHTMLAttributes } from 'react'
+import {
+    FC,
+    PropsWithChildren,
+    ButtonHTMLAttributes,
+    KeyboardEvent,
+} from 'react'
 import cn from 'classnames'
 
 import styles from './button.module.scss'
@@ -20,21 +25,31 @@ export const Button: FC<ButtonProps> = ({
     children,
     type = 'button',
     ...rest
-}) => (
-    <button
-        className={cn(
-            {
-                [styles.button]: !asIcon,
-                [styles['button-disabled']]: disabled && !asIcon,
-                [styles['as-icon']]: asIcon,
-            },
-            className
-        )}
-        type={type}
-        onClick={() => onClick && onClick()}
-        disabled={disabled}
-        {...rest}
-    >
-        {children}
-    </button>
-)
+}) => {
+    const onKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            if (onClick) {
+                onClick()
+            }
+        }
+    }
+    return (
+        <button
+            className={cn(
+                {
+                    [styles.button]: !asIcon,
+                    [styles['button-disabled']]: disabled && !asIcon,
+                    [styles['as-icon']]: asIcon,
+                },
+                className
+            )}
+            type={type}
+            onKeyDown={onKeyDown}
+            onClick={() => onClick && onClick()}
+            disabled={disabled}
+            {...rest}
+        >
+            {children}
+        </button>
+    )
+}

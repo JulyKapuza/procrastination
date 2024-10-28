@@ -1,5 +1,7 @@
 import styles from './HabitGrow.module.scss'
 import Image from 'next/image'
+import { Question } from '@/common/interfaces/question'
+import { FC } from 'react'
 
 interface ElementProgress {
     id: number
@@ -35,14 +37,17 @@ const progressAction: ProgressAction = {
         {
             id: 3,
             title: 'Then it’s simply who you are',
-            image: 'icons/result.svg',
+            image: '/icons/result.svg',
             period: 'Day 90',
         },
     ],
 }
-export const HabitGrow = () => {
+interface HabitGrowProps {
+    className?: string
+}
+export const HabitGrow: FC<HabitGrowProps> = ({ className }) => {
     return (
-        <>
+        <div className={className}>
             <h2 className="title">{progressAction.title}</h2>
             <p className={styles.description}>{progressAction.description}</p>
             <ul className={styles['habit-list']}>
@@ -51,11 +56,16 @@ export const HabitGrow = () => {
                         <div className={styles['habit-list_title']}>
                             {title}
                         </div>
-                        <Image src={image} alt={title} />
+                        <Image
+                            src={image}
+                            alt={title}
+                            width={70}
+                            height={100}
+                        />
                         <p className={styles['habit-list_period']}>{period}</p>
                     </li>
                 ))}
             </ul>
-        </>
+        </div>
     )
 }

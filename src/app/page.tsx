@@ -75,7 +75,7 @@ export default function Home() {
     const isEmailInvalid = isResultViewed && !VALIDATION.validateEmail(email)
 
     return (
-        <main className="h-full bg-[#FDFCF9] p-4">
+        <main className="h-screen bg-[#FDFCF9] px-4 py-3">
             <div className="h-full grid grid-rows-[1fr]">
                 <div className="flex flex-col h-full max-w-[1300px] sm:mx-auto">
                     <Header steps={quiz.total} onClickBack={onClickBack} />

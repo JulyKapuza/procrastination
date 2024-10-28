@@ -11,7 +11,7 @@
   .answer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: $size-4;
   }
 }
 @media screen and (min-width: 768px) {
