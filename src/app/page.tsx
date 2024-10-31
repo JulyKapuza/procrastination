@@ -9,7 +9,6 @@ import { INITIAL_STEP } from '@/common/constants'
 import { Step } from '@/components/Step/Step'
 import { BackButton } from '@/components/ui/BackButton/BackButton'
 
-//TODO: Not question. Lazy Loading
 
 export default function Home() {
     const { currentStep, decrementStep } = useStore(appStore)
