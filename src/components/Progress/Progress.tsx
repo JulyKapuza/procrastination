@@ -43,6 +43,7 @@ export const Progress: FC<ProgressProps> = ({
     currentStep,
     className,
 }) => {
+
     return (
         <div className={cn(style['root-wrapper'], className)}>
             <div className={style['bar-wrapper']}>

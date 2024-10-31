@@ -9,7 +9,7 @@ interface BackButtonProps {
 }
 
 export const BackButton: FC<BackButtonProps> = ({ onClick }) => (
-    <Button asIcon onClick={onClick} className="absolute-center">
+    <Button asIcon onClick={onClick} className="absolute top-[6px] z-10">
         <ArrowLeft />
     </Button>
 )

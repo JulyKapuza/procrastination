@@ -1,29 +1,21 @@
-import { answerStore, multiAnswerStore } from '@/stores/quiz'
+import { quiz } from '@/mock/quiz'
+import { answerStore } from '@/stores/answers'
 
 export const sendAnswers = (email: string) => {
-    const combinedStore = {
-        ...answerStore.getState().answers,
-        ...multiAnswerStore.getState().answers,
-    }
+    const { answers: userAnswers } = answerStore.getState()
 
-    const answers = Object.entries(combinedStore).reduce(
-        (acc, [questionId, answer]) => {
-            let answerId: number | null = null
-            const answerIds = []
+    const answers = Object.values(quiz.questions).reduce(
+        (acc, question) => {
+            if (userAnswers[question.id]) {
+                const answers = Object.values(userAnswers[question.id])
 
-            if (typeof answer === 'object') {
-                for (const key in answer) {
-                    answerIds.push(answer[key])
-                }
-            } else {
-                answerId = answer
+                acc[question.id] =
+                    question.type === 'multiple' ? answers : answers[0]
             }
-
-            acc[questionId] = answerId || answerIds
 
             return acc
         },
-        {} as Record<string, number | number[]>
+        {} as Record<string | number, number | string | (string | number)[]>
     )
 
     // POST Request

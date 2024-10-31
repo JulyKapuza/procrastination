@@ -37,7 +37,7 @@ export const Button: FC<ButtonProps> = ({
         <button
             className={cn(
                 {
-                    [styles.button]: !asIcon,
+                    [styles.button]: !asIcon && !disabled,
                     [styles['button-disabled']]: disabled && !asIcon,
                     [styles['as-icon']]: asIcon,
                 },

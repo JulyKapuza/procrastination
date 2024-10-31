@@ -16,20 +16,7 @@
 
   margin-bottom: $size-5;
 }
-.discount{
-  width: 100%;
-  font-weight: 500;
-  font-size: $size-4;
-  line-height: 24px;
-  text-align: center;
-  color:$color-grey-07;
 
-  background-color: $color-yellow-01;
-  border-radius: $size-2;
-  padding: $size-2;
-  margin-bottom: $size-5;
-
-}
 .list-plans{
   margin-bottom: $size-5;
 }
@@ -44,20 +31,7 @@
   font-weight: 500;
 }
 
-.note{
-  max-width: 500px;
-  margin: $size-2 auto 0;
-  font-size: 10px;
-  line-height: 15px;
-  color: $color-grey-04;
-  font-weight: normal;
-  text-align: center;
 
-  &-email{
-    text-decoration: underline;
-    margin-top: 0;
-  }
-}
 
 @media screen and (min-width: 960px){
   .list-plans{

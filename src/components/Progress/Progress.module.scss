@@ -2,7 +2,7 @@
 @use "src/styles/mixin" as *;
 
 .root-wrapper {
-  padding: $size-2 0;
+  padding: 0 $size-2 0 0;
 }
 
 .bar-wrapper {

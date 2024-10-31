@@ -1,10 +1,8 @@
 'use client'
-import { useState } from 'react'
+
 import { plansData } from '@/mock/plans'
 import '../../styles/globals.scss'
 import styles from './styles.module.scss'
-import { Timer } from '@/components/Timer/Timer'
-import { PlanItem } from '@/components/PlanItem/PlanItem'
 import LockIcon from '../../../public/icons/lock.svg'
 import { Button } from '@/components/ui/Button/Button'
 import { useRouter } from 'next/navigation'
@@ -12,15 +10,15 @@ import { useStore } from 'zustand'
 import { appStore } from '@/stores/app'
 import { Header } from '@/components/Header/Header'
 import { Routes } from '@/common/constants'
+import { PlanList } from '@/components/PlanList/PlanList'
+import { SubscriptionWarning } from '@/components/SubscriptionWarning/SubscriptionWarning'
+import { Discount } from '@/components/Discount/Discount'
+import { BackButton } from '@/components/ui/BackButton/BackButton'
 
 export default function Sale() {
     const router = useRouter()
-
     const { currentStep, decrementStep } = useStore(appStore)
 
-    const [selectedPlan, setSelectedPlan] = useState<number>(
-        plansData.defaultPlan
-    )
     const onClickBack = () => {
         if (currentStep) decrementStep()
         router.push(Routes.HOME)
@@ -29,24 +27,12 @@ export default function Sale() {
     return (
         <main className="h-screen px-4 py-3 bg-[#FEFEEE]">
             <div className="h-full grid grid-rows-[1fr]">
-                <div className="flex flex-col h-full max-w-[1300px] sm:mx-auto">
-                    <Header onClickBack={onClickBack} />
+                <div className="relative flex flex-col h-full max-w-[1300px] sm:mx-auto">
+                    <BackButton onClick={onClickBack} />
+                    <Header />
                     <h1 className={styles['title-plans']}>Choose your plan</h1>
-                    <div className={styles.discount}>
-                        51% discount reserved for <Timer />
-                    </div>
-                    <ul className={styles['list-plans']}>
-                        {plansData.plans.map((plan) => (
-                            <PlanItem
-                                key={plan.id}
-                                defaultPlan={plansData.defaultPlan}
-                                plan={plan}
-                                selectedPlan={selectedPlan}
-                                onClick={setSelectedPlan}
-                            />
-                        ))}
-                    </ul>
-
+                    <Discount />
+                    <PlanList defaultPlan={plansData.defaultPlan} />
                     <div className={styles['money-back']}>
                         <LockIcon />
                         30-day money-back guarantee
@@ -54,16 +40,7 @@ export default function Sale() {
                     <Button className="sm:mx-auto sm:max-w-max">
                         Get my plan
                     </Button>
-                    <p className={styles.note}>
-                        Please note, if you don&#39;t cancel before the
-                        discounted introductory plan ends, your subscription
-                        will automatically renew every month at the full price
-                        of $39.99. To cancel your subscription, please contact
-                        us at
-                    </p>
-                    <p className={`${styles.note} ${styles['note-email']}`}>
-                        support@get-chillio.app
-                    </p>
+                    <SubscriptionWarning />
                 </div>
             </div>
         </main>

@@ -27,7 +27,6 @@
 
 .button-disabled {
     @include default;
-    cursor: default;
     background-color: $color-grey-01;
     color:$color-grey-03;
 }

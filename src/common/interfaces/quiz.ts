@@ -4,6 +4,5 @@ export interface Quiz {
     id: number
     name: string
     estimation: number
-    questions: Question[]
-    total: number
+    questions: Record<number | string, Question>
 }
