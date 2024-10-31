@@ -8,7 +8,7 @@ import { appStore } from '@/stores/app'
 import { StepWrapper } from '../StepWrapper/StepWrapper'
 import { VALIDATION } from '@/common/utils'
 
-export const EmailSubscription = () => {
+export default function EmailSubscription (){
     const { email, onChangeEmail } = useStore(emailStore)
     const { quiz } = useConfig()
     const { currentStep, incrementStep } = useStore(appStore)

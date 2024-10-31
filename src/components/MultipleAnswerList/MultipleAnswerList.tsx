@@ -5,7 +5,7 @@ import { appStore } from '@/stores/app'
 import { MultipleAnswer } from '../MultipleAnswer/MultipleAnswer'
 import { StepWrapper } from '../StepWrapper/StepWrapper'
 
-export const MultipleAnswerList = () => {
+export default function MultipleAnswerList(){
     const { quiz } = useConfig()
     const { currentStep, incrementStep } = useStore(appStore)
     const { answers: storedAnswers, setAnswer } = useStore(answerStore)

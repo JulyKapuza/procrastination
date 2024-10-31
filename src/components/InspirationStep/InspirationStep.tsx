@@ -4,7 +4,7 @@ import { appStore } from '@/stores/app'
 import { useConfig } from '@/common/hooks/useConfig'
 import { StepWrapper } from '../StepWrapper/StepWrapper'
 
-export const InspirationStep = () => {
+export default function InspirationStep () {
     const { quiz } = useConfig()
     const { currentStep, incrementStep } = useStore(appStore)
 

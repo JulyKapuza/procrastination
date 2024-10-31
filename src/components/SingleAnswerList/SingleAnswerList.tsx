@@ -5,7 +5,7 @@ import { useStore } from 'zustand'
 import { SingleAnswer } from '../SingleAnswer/SingleAnswer'
 import { StepWrapper } from '../StepWrapper/StepWrapper'
 
-export const SingleAnswerList = () => {
+export default function SingleAnswerList () {
     const { quiz } = useConfig()
     const { currentStep, incrementStep } = useStore(appStore)
     const { answers: storedAnswers, setAnswer } = useStore(answerStore)
